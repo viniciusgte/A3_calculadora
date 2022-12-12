@@ -2,22 +2,22 @@
     public class Profissional {
 
     public String Nome;
-    public double SalarioMensal;
-    public double fhd;
+    public double ValorMensalDesejado;
+    public double hdd;
     public int diasUteis = 20;
     
-    public double horasUteisMes () {
+    public double horasLivresMes () {
         double hm;
-        hm = 20 * fhd;
+        hm = 20 * hdd;
         return hm;
     
     }
 
 
     public double CalculaValorHora () {
-        double vh;
-        vh = SalarioMensal / horasUteisMes();
-        return vh;
+        double VH;
+        VH = ValorMensalDesejado / horasLivresMes();
+        return VH;
     }
     
         

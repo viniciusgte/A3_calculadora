@@ -10,9 +10,9 @@ public class AppOrcamento {
         System.out.println("Digite seu nome abaixo: ");
         calculadora.Nome=sc.next();
         System.out.println("Digite abaixo sua pretensão salarial: ");
-        calculadora.SalarioMensal=sc.nextDouble();
+        calculadora.ValorMensalDesejado=sc.nextDouble();
         System.out.println("Digite abaixo quantas horas dísponíveis você tem por dia:  ");
-        calculadora.fhd = sc.nextDouble();
+        calculadora.hdd = sc.nextDouble();
         System.out.print("Digite ao lado a complexidade de 1 a 3 da tela de entrada e saida de dados (Caso ela não exista, digite 0 para continuar): ");
         itemSistema.complex_EntradaSaida = sc.nextInt();
         System.out.print("Digite ao lado a complexidade de 1 a 3 da tela de consulta (Caso ela não exista, digite 0 para continuar): ");
@@ -25,8 +25,8 @@ public class AppOrcamento {
         DecimalFormat time = new DecimalFormat("######0 horas");
 
         System.out.println("\nNome: " + calculadora.Nome);
-        System.out.println("Salário Mensal Pretendido: " + money.format(calculadora.SalarioMensal));
-        System.out.println("Horas Mês: " + time.format(calculadora.horasUteisMes()));
+        System.out.println("Salário Mensal Pretendido: " + money.format(calculadora.ValorMensalDesejado));
+        System.out.println("Horas Mês: " + time.format(calculadora.horasLivresMes()));
         System.out.println("Valor/Hora: " + money.format(calculadora.CalculaValorHora()));
     
 
@@ -85,8 +85,9 @@ public class AppOrcamento {
         System.out.println("Horas totais necessárias para conclusão do sistema: " + total_final_tempo);
         System.out.println("------------------------------------");
 
-        double valor_Total_Sistema = calculadora.CalculaValorHora() * total_Horas_Telas;
+        double valor_Total_Sistema = calculadora.CalculaValorHora() * total_final_tempo;
 
+        System.out.println("\nValor Hora do Orçamento: " + money.format(calculadora.CalculaValorHora()));
         System.out.println("\nValor Total do Orçamento: " + money.format(valor_Total_Sistema));
    
    sc.close();
