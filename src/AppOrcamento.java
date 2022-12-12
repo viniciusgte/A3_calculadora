@@ -38,7 +38,7 @@ public class AppOrcamento {
         ItemSistema[] lista_Itens_Sistemas = new ItemSistema[3];
 
         ItemSistema tela1 = new ItemSistema();
-        tela1.nomeItem = "Tela de operação com E/S de dados";
+        tela1.nomeItem = "Tela   E/S de dados";
         tela1.tipoItem = "Entrada e saida de dados";
         tela1.complex_EntradaSaida = itemSistema.complex_EntradaSaida;
         lista_Itens_Sistemas[0] = tela1;
@@ -65,7 +65,6 @@ public class AppOrcamento {
         System.out.println("Complexidade do Item: " + tela1.complex_EntradaSaida);
         System.out.println(" ");
         System.out.println("Quantidade de Horas Previstas: " + time.format(tela1.CalcularHorasEntradaSaida()));
-        System.out.println("------------------------------------");
         System.out.println(" ");
 // Item 2 
         System.out.println("------------------------------------");
@@ -91,16 +90,20 @@ public class AppOrcamento {
         System.out.println(" ");
         System.out.println("------------------------------------");
 
-        int total_Horas_Telas = tela1.CalcularHorasEntradaSaida()+tela2.CalcularHorasConsulta()+tela3.CalcularHorasGravacao();
+        int tempoTotalTelas = tela1.CalcularHorasEntradaSaida()+tela2.CalcularHorasConsulta()+tela3.CalcularHorasGravacao();
         
-        int total_final_tempo = total_Horas_Telas + (30 * total_Horas_Telas / 100);
 
         System.out.println(" ");
-        System.out.println("Horas totais necessárias para conclusão do sistema: " + total_final_tempo);
+        System.out.println("Horas totais necessárias para conclusão do sistema: Cerca de " + tempoTotalTelas);
         
 
-        double valor_Total_Sistema = calculadora.CalculaValorHora() * total_final_tempo;
+        double valor_Sistema = calculadora.CalculaValorHora() * tempoTotalTelas;
+        // System.out.println("Valor puro: " + valor_Sistema);
+        
+        // Valor Sistema + 30% de gestão, encargos e risco.
+        double valor_Total_Sistema = valor_Sistema + valor_Sistema*30/100; 
 
+        
         System.out.println("\nValor Hora do Orçamento: " + money.format(calculadora.CalculaValorHora()));
         System.out.println("\nValor Total do Orçamento: " + money.format(valor_Total_Sistema));
         System.out.println(" ");
