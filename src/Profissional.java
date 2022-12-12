@@ -1,5 +1,5 @@
     
-    public class Calculadora {
+    public class Profissional {
 
     public String Nome;
     public double SalarioMensal;
@@ -14,7 +14,7 @@
     }
 
 
-    public double CalcularValorHora () {
+    public double CalculaValorHora () {
         double vh;
         vh = SalarioMensal / horasUteisMes();
         return vh;

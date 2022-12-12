@@ -66,7 +66,7 @@ public class AppOrcamento {
         System.out.println("------------------------------------");
         System.out.println("Complexidade do Item: " + tela2.complex_Consulta);
         System.out.println("------------------------------------");
-        System.out.println("Quantidade de Horas Previstas: " + time.format(tela2.CalcularQantidadeHorasCons()));
+        System.out.println("Quantidade de Horas Previstas: " + time.format(tela2.CalcularHorasConsulta()));
         System.out.println("------------------------------------");
         System.out.println(" ");
         System.out.println("Item 3 do orçamento: " + tela3.nomeItem);
@@ -75,11 +75,15 @@ public class AppOrcamento {
         System.out.println("------------------------------------");
         System.out.println("Complexidade do Item: " + tela3.complex_Gravacao);
         System.out.println("------------------------------------");
-        System.out.println("Quantidade de Horas Previstas: " + time.format(tela3.CalcularQantidadeHorasGrav()));
+        System.out.println("Quantidade de Horas Previstas: " + time.format(tela3.CalcularHorasGravacao()));
         System.out.println("------------------------------------");
 
-        int total_Horas_Telas = tela1.CalcularHorasEntradaSaida()+tela2.CalcularQantidadeHorasCons()+tela3.CalcularQantidadeHorasGrav();
+        int total_Horas_Telas = tela1.CalcularHorasEntradaSaida()+tela2.CalcularHorasConsulta()+tela3.CalcularHorasGravacao();
+        
+        int total_final_tempo = total_Horas_Telas + (30 * total_Horas_Telas / 100);
 
+        System.out.println("Horas totais necessárias para conclusão do sistema: " + total_final_tempo);
+        System.out.println("------------------------------------");
 
         double valor_Total_Sistema = calculadora.CalculaValorHora() * total_Horas_Telas;
 

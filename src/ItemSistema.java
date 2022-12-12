@@ -2,65 +2,65 @@ public class ItemSistema {
     public String nomeItem;
     public String tipoItem;
     public int cont=0;
-    public int telasEntSai=0;
-    public int telasCons=0;
-    public int telasGrav=0;
-    public int telas = (telasEntSai+telasCons+telasGrav);
-    public int complexidadeEntSai = 0;
-    public int complexidadeCons = 0;
-    public int complexidadeGrav = 0;
-    public int CalcularQuantidadeHorasEntSai() {
-        int qtdHorasEntSai = 0;
-        switch (complexidadeEntSai) {
+    public int telasEntradaSaida=0;
+    public int telasConsulta=0;
+    public int telasGravacao=0;
+    public int telas = (telasEntradaSaida+telasConsulta+telasGravacao);
+    public int complex_EntradaSaida = 0;
+    public int complex_Consulta = 0;
+    public int complex_Gravacao = 0;
+    public int CalcularHorasEntradaSaida() {
+        int qtdHorasEntradaSaida = 0;
+        switch (complex_EntradaSaida) {
             case 1:
-                qtdHorasEntSai = 8;
+                qtdHorasEntradaSaida = 8;
                 break;
             case 2:
-                qtdHorasEntSai = 12;
+                qtdHorasEntradaSaida = 12;
                 break;
             case 3:
-                qtdHorasEntSai = 16;
+                qtdHorasEntradaSaida = 16;
                 break;
             default:
-                qtdHorasEntSai = 0;
+                qtdHorasEntradaSaida = 0;
                 break;
         }
-        return qtdHorasEntSai;
+        return qtdHorasEntradaSaida;
     }
-    public int CalcularQantidadeHorasCons() {
-        int qtdHorasCons = 0;
-        switch (complexidadeCons) {
+    public int CalcularHorasConsulta() {
+        int qtdHorasConsulta = 0;
+        switch (complex_Consulta) {
             case 1:
-                qtdHorasCons = 4;
+                qtdHorasConsulta = 4;
                 break;
             case 2:
-                qtdHorasCons = 6;
+                qtdHorasConsulta = 6;
                 break;
             case 3:
-                qtdHorasCons = 8;
+                qtdHorasConsulta = 8;
                 break;
             default:
-                qtdHorasCons = 0;
+                qtdHorasConsulta = 0;
                 break;
         }
-        return qtdHorasCons;
+        return qtdHorasConsulta;
     }
-    public int CalcularQantidadeHorasGrav() {
-        int qtdHorasGrav = 0;
-        switch (complexidadeGrav) {
+    public int CalcularHorasGravacao() {
+        int qtdHorasGravacao = 0;
+        switch (complex_Gravacao) {
             case 1:
-                qtdHorasGrav = 16;
+                qtdHorasGravacao = 16;
                 break;
             case 2:
-                qtdHorasGrav = 24;
+                qtdHorasGravacao = 24;
                 break;
             case 3:
-                qtdHorasGrav = 36;
+                qtdHorasGravacao = 36;
                 break;
             default:
-                qtdHorasGrav = 0;
+                qtdHorasGravacao = 0;
                 break;
         }
-        return qtdHorasGrav;
+        return qtdHorasGravacao;
     }
 }
