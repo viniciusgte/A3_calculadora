@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.sql.SQLException;
 
 public class AppOrcamento {
     public static double hd = 0;
@@ -117,8 +118,32 @@ public class AppOrcamento {
         System.out.println("Orçamento Concluído com Sucesso!");
         System.out.println(" ");
         System.out.println("------------------------------------");
-   
-    sc.close();
+
+        sc.close();
+
+// Banco de dados 
+
+        //  Conexao db1 = new Conexao();
+        //  String sql = " CREATE TABLE Orcamento if not exists "+
+            //"(id int(11) not null auto_increment primary key,
+            //tela1 varchar(70),
+            //tela2 varchar(70),
+            //tela3 varchar(70),
+            //tempoTotalTelas int,
+            // valortotalsistema DOUBLE");
+
+        // db1.OpenDatabase();
+        // db1.ExecutaQuery(sql);
+                
+        // sql =    "INSERT into Orcamento "+
+                // "(tela1) value ('') ,
+                // (tela2) value (''),
+                // (tela3) value (''),
+                // (tempoTotalTelas) value (''),
+                // (valortotalsistema) value ('')";
+
+        // db1.ExecutaQuery(sql);
+        // db1.CloseDatabase();
 
     }
 }
